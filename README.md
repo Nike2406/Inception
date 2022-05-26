@@ -19,6 +19,27 @@
 
 	example: sudo vim /etc/hosts
 
+6. #### (Опционально) Подключаем SSH
+
+В первую очередь проверить, установлени и запущени ли ssh на виртуальной машине:
+`sudo systemctl status ssh`, если нет устанавливаем
+
+	$ sudo apt-get update
+	$ sudo apt install openssh-server
+
+В файле `/etc/ssh/sshd_config` ищем строку `#Port 22`, раскомментируем и меняем,
+например, на `Port 4242`
+
+Заходим в настройки виртуальной машины
+Сеть -> Проброс портов и создаем новое соединение как на картинке
+![img1](./git_srcs/1.png) ![img2](./git_srcs/2.png)
+
+Перезапускаем сервис: `$ sudo service ssh restart`
+
+Подключаемся через терминал с локальной машины: `$ ssh your_username@localhost -p 4242`
+
+
+
 ---
 
 ### Полезные ссылки
