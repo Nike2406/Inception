@@ -11,7 +11,10 @@
 
 3. #### Установка [Docker Compose](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-compose-on-ubuntu-20-04-ru)
 
-4. #### Уствновка необходимых программ (не забываем о make)
+4. #### Устновка необходимых программ
+
+	$ sudo apt-get install vim
+	$ sudo apt-get install make
 
 5. #### Изменяем хосты
 
