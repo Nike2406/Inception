@@ -11,6 +11,14 @@
 
 3. #### Установка [Docker Compose](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-compose-on-ubuntu-20-04-ru)
 
+4. #### Уствновка необходимых программ (не забываем о make)
+
+5. #### Изменяем хосты
+
+Открываем с правами админа /etc/hosts и меняем localhost на 'username'.42.fr
+
+	example: `sudo vim /etc/hosts`
+
 ---
 
 ### Полезные ссылки
