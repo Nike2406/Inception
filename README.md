@@ -13,8 +13,8 @@
 
 4. #### Устновка необходимых программ
 
-	$ sudo apt-get install vim
-	$ sudo apt-get install make
+	`$ sudo apt-get install vim
+	$ sudo apt-get install make`
 
 5. #### Изменяем хосты
 
