@@ -17,7 +17,7 @@
 
 Открываем с правами админа /etc/hosts и меняем localhost на 'username'.42.fr
 
-	example: `sudo vim /etc/hosts`
+	example: sudo vim /etc/hosts
 
 ---
 
