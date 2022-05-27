@@ -5,26 +5,14 @@
 Образ [Ubuntu stable](https://releases.ubuntu.com/20.04/) и его [настройка](https://losst.ru/kak-polzovatsya-virtualbox#2_%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5_%D0%B2%D0%B8%D1%80%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B9_%D0%BC%D0%B0%D1%88%D0%B8%D0%BD%D1%8B) через VirtualBox.
 Рекомендую настраивать разрешение через саму систему, а не через scale VB.
 
-2. #### Установка [Docker](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-compose-on-ubuntu-20-04-ru)
-
-Достаточно первого шага.
-
-3. #### Установка [Docker Compose](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-compose-on-ubuntu-20-04-ru)
-
-4. #### Устновка необходимых программ
+2. #### Устновка необходимых программ
 
 Например, vim и make
 
 	$ sudo apt-get install vim
 	$ sudo apt-get install make
 
-5. #### Изменяем хосты
-
-Открываем с правами админа /etc/hosts и меняем localhost на 'username'.42.fr
-
-	example: sudo vim /etc/hosts
-
-6. #### (Опционально) Подключаем SSH
+3. #### (Опционально) Подключаем SSH
 
 В первую очередь проверить, установлени и запущени ли ssh на виртуальной машине:
 `sudo systemctl status ssh`, если нет устанавливаем
@@ -45,6 +33,20 @@
 Перезапускаем сервис: `$ sudo service ssh restart`
 
 Подключаемся через терминал с локальной машины: `$ ssh your_username@localhost -p 4242`
+
+Для подключения **Visual Studio Code** к виртуальной машине запустите виртуальную машину. Откройте Visual Studio Code на основной ОС. Слева на панели VS Code выберите Extensions (Расширения) и найдите и скачайте расширение "Remote - SSH". Затем в VS Code откройте меню с помощью сочетания клавиш Command+Shift+P, введите "Remote-SSH: Connect to Host..." и нажмите Enter. Там же введите <your_login>@localhost:<your_port>, затем введите пароль пользователя виртуальной машины, откройте необходимую папку через Explorer->Open Folder слева на панели VS Code, снова введите пароль пользователя виртуальной машины и создайте новый терминал
+
+4. #### Изменяем хосты
+
+Открываем с правами админа /etc/hosts и меняем localhost на 'username'.42.fr
+
+	example: sudo vim /etc/hosts
+
+5. #### Установка [Docker](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-compose-on-ubuntu-20-04-ru)
+
+Достаточно первого шага.
+
+6. #### Установка [Docker Compose](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-compose-on-ubuntu-20-04-ru)
 
 ---
 
