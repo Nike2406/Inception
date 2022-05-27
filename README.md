@@ -50,6 +50,10 @@
 
 6. #### Установка [Docker Compose](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-compose-on-ubuntu-20-04-ru)
 
+7. #### Создаем Makefile
+
+Для удобства [делаем](./Makefile) запуск, остановку и очистку всего
+
 ---
 
 ### Полезные ссылки
