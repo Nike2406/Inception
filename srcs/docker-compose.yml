@@ -48,6 +48,27 @@ services:
     networks:
       - project
 
+# Тома (volumes) - используются для запоминания информации даже
+# после перезапуска контейнеров
+# Содержимое сохраняется по адресу: /var/lib/docker/volumes/
+volumes:
+  db:
+    name: db
+    driver: local
+    driver_opts: # описывает необязательные занчения драйвера для данной сети
+      type: none # тип сервиса контейнера
+      # type: the mount type volume, bind, tmpfs or npipe
+      o: bind
+      device: /home/${USER}/data/db
+  wp:
+    name: wp
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: /home/${USER}/data/wp
+
+# настройка внутренней сети
 networks:
   project:
     driver: bridge
