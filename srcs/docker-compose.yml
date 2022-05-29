@@ -8,18 +8,45 @@ services:
   nginx: # название сервиса (может быть любым)
     container_name: nginx
     build: ./srcs/requirements/nginx # откуда берем docker-file
-    env_file:
-      - .env
+    env_file: # говорим compose, что у нас будет специальный
+      - .env  # файл для переменной окружения
     hostname: localhost
     volumes:
       - wp:/var/www/html/wordpress # где создаем том
     networks:
-      - project # название сети
+      - project # название сети, к которой будет подключаться модуль
+                # (описывается в самом конце)
     depends_on:
       - wordpress # устанавливаем зависимость
     ports:
-      - "4242:4242"
+    # устанавливаем порт с которым будет соединяться наш контейнер
+    # по сабжекту - это порт 443
+    # [порт компьютера]:[порт контейнера]
+      - "4242:443"
     restart: always # инструкции при остановке образа
+
+  wordpress:
+    container_name: wordpress
+    build: ./srcs/requirements/wordpress
+    env_file:
+      - .env
+    hostname: localhost
+    volumes:
+      - wp:/var/www/html/wordpress
+    networks:
+      - project
+    depends_on: maria_db
+
+  maria_db:
+    container_name: maria_db
+    build: ./srcs/requirements/maria_db
+    env_file:
+      - .env
+    hostname: localhost
+    volumes:
+      - db:/var/lib/mysql
+    networks:
+      - project
 
 networks:
   project:

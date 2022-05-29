@@ -58,7 +58,11 @@
 
 В директории __srcs__ создаем docker-compose.yml
 
-Хороший [разбор](https://youtu.be/xuO8zv62HXM?list=PL0lO_mIqDDFX1c0JHogP5YuZdOVawoepS) создания docker-compose.yml
+Хороший [разбор](https://youtu.be/xuO8zv62HXM?list=PL0lO_mIqDDFX1c0JHogP5YuZdOVawoepS)
+
+Создаем необходимые директории
+	mkdir -p /home/${USER}/data/db
+	mkdir -p /home/${USER}/data/wp
 
 9. #### Настраиваем блок с nginx
 
