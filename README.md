@@ -52,7 +52,17 @@
 
 7. #### Создаем Makefile
 
-Для удобства [делаем](./Makefile) запуск, остановку и очистку всего
+Для удобства [делаем](./Makefile) запуск, остановку и очистку всего.
+
+8. #### [docker-compose.yml](./srcs/docker-compose.yml)
+
+В директории __srcs__ создаем docker-compose.yml
+
+Хороший [разбор](https://youtu.be/xuO8zv62HXM?list=PL0lO_mIqDDFX1c0JHogP5YuZdOVawoepS) создания docker-compose.yml
+
+9. #### Настраиваем блок с nginx
+
+Офицальныая [дока](https://hub.docker.com/_/nginx) с докерхаба
 
 ---
 

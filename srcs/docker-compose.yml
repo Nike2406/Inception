@@ -1,0 +1,26 @@
+# Каждый docker-file должен начинаться с № версии
+version: '3.9'
+
+# Сервисы (или контейнеры), которые будут подключаться
+services:
+  # nginx [engine x] — это HTTP-сервер и обратный прокси-сервер,
+  # почтовый прокси-сервер, а также TCP/UDP прокси-сервер общего назначения
+  nginx: # название сервиса (может быть любым)
+    container_name: nginx
+    build: ./srcs/requirements/nginx # откуда берем docker-file
+    env_file:
+      - .env
+    hostname: localhost
+    volumes:
+      - wp:/var/www/html/wordpress # где создаем том
+    networks:
+      - project # название сети
+    depends_on:
+      - wordpress # устанавливаем зависимость
+    ports:
+      - "4242:4242"
+    restart: always # инструкции при остановке образа
+
+networks:
+  project:
+    driver: bridge
