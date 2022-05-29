@@ -58,8 +58,9 @@ volumes:
     driver_opts: # описывает необязательные занчения драйвера для данной сети
       type: none # тип сервиса контейнера
       # type: the mount type volume, bind, tmpfs or npipe
-      o: bind
-      device: /home/${USER}/data/db
+      o: bind # устанавливает специфические опции для драйвера
+      # аналог --opt
+      device: /home/${USER}/data/db # куда сохраняются данные для каждого сериса
   wp:
     name: wp
     driver: local
@@ -70,5 +71,5 @@ volumes:
 
 # настройка внутренней сети
 networks:
-  project:
-    driver: bridge
+  project: # название сети
+    driver: bridge # тип сети
