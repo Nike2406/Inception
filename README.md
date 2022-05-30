@@ -68,6 +68,7 @@
 9. #### Настраиваем блок с nginx
 
 Офицальныая [дока](https://hub.docker.com/_/nginx) с докерхаба
+Более [подробно](https://serveradmin.ru/ustanovka-i-nastrojka-nginx/)
 
 ---
 
