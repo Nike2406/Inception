@@ -1,5 +1,5 @@
 # задает базовый образ
-FROM debian:baster
+FROM debian:buster
 
 # выполняет комманды внутри базового образа
 RUN apt-get update
