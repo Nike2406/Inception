@@ -72,6 +72,10 @@
 
 Настраиваем [скрипт](./srcs/requirements/nginx/tools/set_ssl.sh) для ssl-шифрования по [этой](https://webguard.pro/web-services/nginx/generacziya-ssl-sertifikata-dlya-nginx-openssl.html) инструкции
 
+Для перенаправления данных исползуем настройки [FastCGI](https://www.nginx.com/resources/wiki/start/topics/examples/phpfcgi/) для PHP FPM
+
+Не забываем добавлять .dockerignore для игнорирования файлов во время сборки
+
 
 
 ---

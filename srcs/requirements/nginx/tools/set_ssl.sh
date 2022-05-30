@@ -13,6 +13,8 @@ openssl req \ # req - создает и обрабатывает запросф 
 	 -newkey rsa:2048 \ # создает новый запрос сертификата и новый закрытый ключ
 	 \ # где rsa:2048 - размер ключа в битах
 	 -keyout /etc/nginx/ssl/nginx.key \ # новый ключ
-	 -out /etc/nginx/ssl/nginx.crt # новый серт
+	 -out /etc/nginx/ssl/nginx.crt \ # новый серт
+	 -subj "/C=RU/ST=Tatarstan/L=Kazan/O=School21/CN=prochell.42.fr" \
+	 # для сертов необходимо заполнить доп инф. деллается через -subj
 echo "NGINX: Set ssl done!";
 fi
