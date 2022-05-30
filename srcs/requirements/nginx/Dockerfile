@@ -15,6 +15,6 @@ COPY ./tools/set_ssl.sh /var/www/
 
 CMD bash /var/www/set_ssl.sh
 
-# Run nginx
+# Пуск nginx
 # Nginx использует daemon off директиву для запуска на переднем плане
 ENTRYPOINT ["nginx", "-g", "daemon off;"]
