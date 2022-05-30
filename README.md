@@ -70,6 +70,10 @@
 Офицальныая [дока](https://hub.docker.com/_/nginx) с докерхаба
 Более [подробно](https://serveradmin.ru/ustanovka-i-nastrojka-nginx/)
 
+Настраиваем [скрипт](./srcs/requirements/nginx/tools/set_ssl.sh) для ssl-шифрования по [этой](https://webguard.pro/web-services/nginx/generacziya-ssl-sertifikata-dlya-nginx-openssl.html) инструкции
+
+
+
 ---
 
 ### Полезные ссылки
