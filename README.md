@@ -80,7 +80,9 @@
 
 - Создаем конфигурационный [файл](https://exampleconfig.com/view/mariadb-ubuntu18-04-etc-mysql-mariadb-conf-d-50-server-cnf)
 - Создаем базу данных на основе wordpress
+- host_name должен быть либо %, либо Вы должны задать его принудительно и использовать его имя.
 
+10. #### [Wordpress]
 
 
 
