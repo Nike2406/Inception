@@ -4,7 +4,7 @@
 # сделаем немного оптимизации с помощью if-fi
 
 if [! -f /etc/ssl/certs/nginx.crt]; then
-echo "NGINX: Set ssl start";
+echo "\e[0;33mNGINX: Set ssl start \e[0m";
 # генерируем самоподписаный сертификат SSL
 openssl req \ # req - создает и обрабатывает запросф сертов
 	 -x509 \ # выводит самоподписанный серт вместо запроса

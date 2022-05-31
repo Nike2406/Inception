@@ -25,6 +25,17 @@ services:
       - "443:443"
     restart: always # инструкции при остановке образа
 
+  maria_db:
+    container_name: maria_db
+    build: ./srcs/requirements/maria_db
+    env_file:
+      - .env
+    hostname: localhost
+    volumes:
+      - db:/var/lib/mysql
+    networks:
+      - project
+
   wordpress:
     container_name: wordpress
     build: ./srcs/requirements/wordpress
@@ -36,17 +47,6 @@ services:
     networks:
       - project
     depends_on: maria_db
-
-  maria_db:
-    container_name: maria_db
-    build: ./srcs/requirements/maria_db
-    env_file:
-      - .env
-    hostname: localhost
-    volumes:
-      - db:/var/lib/mysql
-    networks:
-      - project
 
 # Тома (volumes) - используются для запоминания информации даже
 # после перезапуска контейнеров

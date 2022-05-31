@@ -65,7 +65,7 @@
 	mkdir -p /home/${USER}/data/db
 	mkdir -p /home/${USER}/data/wp
 
-9. #### Настраиваем блок с nginx
+9. #### Настраиваем блок с [nginx](./srcs/requirements/nginx/)
 
 Офицальныая [дока](https://hub.docker.com/_/nginx) с докерхаба
 Более [подробно](https://serveradmin.ru/ustanovka-i-nastrojka-nginx/)
@@ -75,6 +75,10 @@
 Для перенаправления данных исползуем настройки [FastCGI](https://www.nginx.com/resources/wiki/start/topics/examples/phpfcgi/) для PHP FPM
 
 Не забываем добавлять .dockerignore для игнорирования файлов во время сборки
+
+9. #### [MariaDB](./srcs/requirements/mariadb/)
+
+
 
 
 
