@@ -78,6 +78,9 @@
 
 9. #### [MariaDB](./srcs/requirements/mariadb/)
 
+- Создаем конфигурационный [файл](https://exampleconfig.com/view/mariadb-ubuntu18-04-etc-mysql-mariadb-conf-d-50-server-cnf)
+- Создаем базу данных на основе wordpress
+
 
 
 
