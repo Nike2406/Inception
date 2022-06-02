@@ -82,7 +82,10 @@
 - Создаем базу данных на основе wordpress
 - host_name должен быть либо %, либо Вы должны задать его принудительно и использовать его имя.
 
-10. #### [Wordpress]
+10. #### [Wordpress](./srcs/requirements/wordpress/)
+
+- Создаем конфигурационный файл пула [www.conf](https://www.php.net/manual/ru/install.fpm.configuration.php) ([__Пример__](https://gist.github.com/rvanzee/2352093)), который позволяет запускать несколько дочерних процесов в разными конфигурациями
+- Создаем конфигруационный файл wordPress ([wp-config.php](https://www.wpbeginner.com/beginners-guide/how-to-edit-wp-config-php-file-in-wordpress/))
 
 
 
