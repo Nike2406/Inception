@@ -85,8 +85,8 @@
 10. #### [Wordpress](./srcs/requirements/wordpress/)
 
 - Создаем конфигурационный файл пула [www.conf](https://www.php.net/manual/ru/install.fpm.configuration.php) ([__Пример__](https://gist.github.com/rvanzee/2352093)), который позволяет запускать несколько дочерних процесов в разными конфигурациями
-- Создаем конфигруационный файл wordPress ([wp-config.php](https://www.wpbeginner.com/beginners-guide/how-to-edit-wp-config-php-file-in-wordpress/))
-
+- Создаем конфигруационный файл wordPress ([wp-config.php](https://www.wpbeginner.com/beginners-guide/how-to-edit-wp-config-php-file-in-wordpress/)). Не забываем сгенерировать свои ключи [отсюда](https://api.wordpress.org/secret-key/1.1/salt/).
+- По сабжекту нужно создать двух пользователей, один из которых админ, при этом, имя админа не должно быть andmin, andmin-123 etc (WTF!?).
 
 
 

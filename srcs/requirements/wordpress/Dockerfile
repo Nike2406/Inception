@@ -3,20 +3,12 @@ FROM debian:buster
 
 # выполняет комманды внутри базового образа
 RUN apt-get update
-RUN apt-get install -y mariadb-server
-
-# копирует в контейнер файлы и папки
-# копируем конфиг из нашей папки в папку по офф доке
-COPY ./conf/50-server.cnf /etc/mysql/mariadb.conf.d/
-COPY ./tools/createdb.sql /var/www/
+RUN apt-get -y install php7.3 php-mysqli php-fpm mariadb-client
 
 # открываем порт по сабжекту
-EXPOSE 3306
+EXPOSE 9000
 
-# запускаем сервис внутри контейнера и создаем базу
-RUN service mysql start
-RUN mysql < /var/www/createdb.sql
-# после сразу удаляем, чтобы каждый раз база не пересоздавалась (?)
-RUN rm -f /var/www/createdb.sql
+COPY ./conf/www.conf /etc/php/7.3/fpm/pool.d
+COPY ./tools /var/www/
 
-CMD /usr/bin/mysqld_safe
+CMD bash /var/www/wp_script.sh
