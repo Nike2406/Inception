@@ -88,12 +88,11 @@
 - Создаем конфигруационный файл wordPress ([wp-config.php](https://www.wpbeginner.com/beginners-guide/how-to-edit-wp-config-php-file-in-wordpress/)). Не забываем сгенерировать свои ключи [отсюда](https://api.wordpress.org/secret-key/1.1/salt/).
 - По сабжекту нужно создать двух пользователей, один из которых админ, при этом, имя админа не должно быть andmin, andmin-123 etc (WTF!?).
 
-
-
 ---
 
 ### Полезные ссылки
 
+- [Checklist](./checklist.pdf)
 - [Правильный запуск процессов в контейнере с PID 1](https://it-lux.ru/docker-entrypoint-pid-1/)
 - [Docker docks](https://docs.docker.com/)
 - Полезная [статья](https://habr.com/ru/company/ruvds/blog/450312/) по docker compose на хабре
