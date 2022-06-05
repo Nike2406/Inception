@@ -7,7 +7,7 @@ services:
   # почтовый прокси-сервер, а также TCP/UDP прокси-сервер общего назначения
   nginx: # название сервиса (может быть любым)
     container_name: nginx
-    build: ./srcs/requirements/nginx # откуда берем docker-file
+    build: ./requirements/nginx # откуда берем docker-file
     env_file: # говорим compose, что у нас будет специальный
       - .env  # файл для переменной окружения
     hostname: localhost
@@ -25,9 +25,9 @@ services:
       - "443:443"
     restart: always # инструкции при остановке образа
 
-  maria_db:
-    container_name: maria_db
-    build: ./srcs/requirements/maria_db
+  mariadb:
+    container_name: mariadb
+    build: ./requirements/mariadb
     env_file:
       - .env
     hostname: localhost
@@ -38,7 +38,7 @@ services:
 
   wordpress:
     container_name: wordpress
-    build: ./srcs/requirements/wordpress
+    build: ./requirements/wordpress
     env_file:
       - .env
     hostname: localhost
@@ -46,14 +46,15 @@ services:
       - wp:/var/www/html/wordpress
     networks:
       - project
-    depends_on: maria_db
+    depends_on:
+      - mariadb
 
 # Тома (volumes) - используются для запоминания информации даже
 # после перезапуска контейнеров
 # Содержимое сохраняется по адресу: /var/lib/docker/volumes/
 volumes:
   db:
-    name: db
+    # name: db
     driver: local
     driver_opts: # описывает необязательные занчения драйвера для данной сети
       type: none # тип сервиса контейнера
@@ -62,7 +63,7 @@ volumes:
       # аналог --opt
       device: /home/${USER}/data/db # куда сохраняются данные для каждого сериса
   wp:
-    name: wp
+    # name: wp
     driver: local
     driver_opts:
       type: none

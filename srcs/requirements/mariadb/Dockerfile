@@ -14,9 +14,9 @@ COPY ./tools/createdb.sql /var/www/
 EXPOSE 3306
 
 # запускаем сервис внутри контейнера и создаем базу
-RUN service mysql start
-RUN mysql < /var/www/createdb.sql
+RUN service mysql start && \
+mysql < /var/www/createdb.sql && \
 # после сразу удаляем, чтобы каждый раз база не пересоздавалась (?)
-RUN rm -f /var/www/createdb.sql
+rm -f /var/www/createdb.sql
 
 CMD /usr/bin/mysqld_safe
