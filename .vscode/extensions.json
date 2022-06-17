@@ -1,0 +1,17 @@
+{
+	"recommendations": [
+		"vadimcn.vscode-lldb",
+		"ms-azuretools.vscode-docker",
+		"mathiasfrohlich.kotlin",
+		"shan.code-settings-sync",
+		"tomoki1207.selectline-statusbar",
+		"coenraads.bracket-pair-colorizer",
+		"hookyqr.beautify",
+		"jeff-hykin.better-cpp-syntax",
+		"ms-vscode.cpptools-themes",
+		"ms-vscode.cpptools-extension-pack",
+		"ms-vscode.cpptools",
+		"ritwickdey.liveserver",
+		"formulahendry.auto-close-tag"
+	]
+}
