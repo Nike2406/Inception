@@ -44,7 +44,7 @@
 
 	example: sudo vim /etc/hosts
 
-5. #### Установка [Docker](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-compose-on-ubuntu-20-04-ru)
+5. #### Установка [Docker](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04-ru)
 
 Достаточно первого шага.
 
