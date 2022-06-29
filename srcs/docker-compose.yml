@@ -12,7 +12,7 @@ services:
       - .env  # файл для переменной окружения
     hostname: localhost
     volumes:
-      - wp:/var/www/html/wordpress # где создаем том
+      - /var/www/html/wordpress # где создаем том
     networks:
       - project # название сети, к которой будет подключаться модуль
                 # (описывается в самом конце)
@@ -32,7 +32,7 @@ services:
       - .env
     hostname: localhost
     volumes:
-      - db:/var/lib/mysql
+      - /var/lib/mysql
     networks:
       - project
 
@@ -43,7 +43,7 @@ services:
       - .env
     hostname: localhost
     volumes:
-      - wp:/var/www/html/wordpress
+      - /var/www/html/wordpress
     networks:
       - project
     depends_on:
