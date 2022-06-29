@@ -10,11 +10,11 @@ EXPOSE 443
 
 # копирует в контейнер файлы и папки
 # копируем конфиг из нашей папки в папку по офф доке
-COPY ./conf/nginx.conf /etc/nginx/
+COPY ./conf/nginx.conf /etc/nginx/sites-enabled/default
 COPY ./tools/set_ssl.sh /var/www/
 
 CMD bash /var/www/set_ssl.sh
 
 # Пуск nginx
 # Nginx использует daemon off директиву для запуска на переднем плане
-CMD nginx -g daemon off
+# CMD nginx -g 'daemon off;'
