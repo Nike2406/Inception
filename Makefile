@@ -11,7 +11,7 @@ clean: stop
 	sudo rm -rf /home/${USER}/data/wp
 	sudo rm -rf /home/${USER}/data/db
 	@ docker volume rm $$(docker volume ls -q);
-	docker system prune -y
+	docker system prune 
 
 re: 
 	@mkdir -p /home/${USER}/data/wp
