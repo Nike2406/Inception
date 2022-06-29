@@ -21,8 +21,14 @@ wget https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar;
 chmod +x wp-cli.phar; 
 mv wp-cli.phar /usr/local/bin/wp;
 cd /var/www/html/wordpress/;
+
+# Создаем папку с сайтом
+# mkdir -p /var/www/html/wordpress/mysite;
+# cp /var/www/html/wordpress/index.html /var/www/html/wordpress/mysite/index.html;
+
 wp core download --allow-root;
-mv /var/www/wp-config.php /var/www/html/wordpress
+mv /var/www/wp-config.php /var/www/html/wordpress/
+
 echo "Wordpress: Users created!"
 # Зоздаем рут-пользователя
 wp core install --allow-root --url=${DOMAIN_NAME} --title=${WORDPRESS_NAME} --admin_user=${WORDPRESS_ROOT_LOGIN} --admin_password=${MYSQL_ROOT_PASSWORD} --admin_email=${WORDPRESS_ROOT_EMAIL};
