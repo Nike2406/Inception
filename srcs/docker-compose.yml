@@ -49,6 +49,15 @@ services:
     depends_on:
       - mariadb
 
+  redis:
+    container_name: redis
+    build: ./requirements/bonus/redis
+    ports:
+      - "6379:6379"
+    networks:
+      - project
+    restart: always
+
 # Тома (volumes) - используются для запоминания информации даже
 # после перезапуска контейнеров
 # Содержимое сохраняется по адресу: /var/lib/docker/volumes/
@@ -61,14 +70,14 @@ volumes:
       # type: the mount type volume, bind, tmpfs or npipe
       o: bind # устанавливает специфические опции для драйвера
       # аналог --opt
-      device: /home/${USER}/data/db # куда сохраняются данные для каждого сериса
+      device: /home/${USER}/Desktop/data/db # куда сохраняются данные для каждого сериса
   wp:
     # name: wp
     driver: local
     driver_opts:
       type: none
       o: bind
-      device: /home/${USER}/data/wp
+      device: /home/${USER}/Desktop/data/wp
 
 # настройка внутренней сети
 networks:

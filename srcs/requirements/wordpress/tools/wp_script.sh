@@ -34,9 +34,22 @@ echo "Wordpress: Users created!"
 wp core install --allow-root --url=${DOMAIN_NAME} --title=${WORDPRESS_NAME} --admin_user=${WORDPRESS_ROOT_LOGIN} --admin_password=${MYSQL_ROOT_PASSWORD} --admin_email=${WORDPRESS_ROOT_EMAIL};
 # Зоздаем второго пользователя
 wp user create ${MYSQL_USER} ${WORDPRESS_USER_EMAIL} --user_pass=${MYSQL_PASSWORD} --role=author --allow-root;
+
+# enable redis cache
+sed -i "40i define( 'WP_REDIS_HOST', '$REDIS_HOST' );"      wp-config.php
+sed -i "41i define( 'WP_REDIS_PORT', 6379 );"               wp-config.php
+sed -i "42i define( 'WP_REDIS_TIMEOUT', 1 );"               wp-config.php
+sed -i "43i define( 'WP_REDIS_READ_TIMEOUT', 1 );"          wp-config.php
+sed -i "44i define( 'WP_REDIS_DATABASE', 0 );\n"            wp-config.php
+
+wp plugin install redis-cache --activate --allow-root
+wp plugin update --all --allow-root
+
 else
 echo "Wordpress: Users already exists!"
 fi
+
+wp redis enable --allow-root
 
 echo "Wordpress started on :9000"
 /usr/sbin/php-fpm7.3 -F

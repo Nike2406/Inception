@@ -1,5 +1,7 @@
 # Inception
 
+## Mandatory
+
 1. #### Создание виртуальной машины
 
 Образ [Ubuntu stable](https://releases.ubuntu.com/20.04/) и его [настройка](https://losst.ru/kak-polzovatsya-virtualbox#2_%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5_%D0%B2%D0%B8%D1%80%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B9_%D0%BC%D0%B0%D1%88%D0%B8%D0%BD%D1%8B) через VirtualBox.
@@ -88,6 +90,16 @@
 - Создаем конфигруационный файл wordPress ([wp-config.php](https://www.wpbeginner.com/beginners-guide/how-to-edit-wp-config-php-file-in-wordpress/)). Не забываем сгенерировать свои ключи [отсюда](https://api.wordpress.org/secret-key/1.1/salt/).
 - По сабжекту нужно создать двух пользователей, один из которых админ, при этом, имя админа не должно быть andmin, andmin-123 etc (WTF!?).
 
+## Bonus
+
+1. #### Устанавливаем Redis
+
+1.1 Добавляем сервис в docker-compose
+1.2 Пишем скрипт в папку [tools](./srcs/requirements/bonus/redis/tools/set_redis.sh)
+1.3 Настраиваем [Dockerfile](./srcs/requirements/bonus/redis/Dockerfile)
+
+- Офф [дока](https://hub.docker.com/_/redis)
+
 ---
 
 ### Полезные ссылки
@@ -101,3 +113,4 @@
 - Гоша Дударь [плейлист по докеру](https://www.youtube.com/playlist?list=PL0lO_mIqDDFX1c0JHogP5YuZdOVawoepS)
 - Разные настройки, включая SSH на примере проекта [Born2BeRoot](https://baigal.medium.com/born2beroot-e6e26dfb50ac)
 - [Статья](https://habr.com/ru/company/otus/blog/337688/) по продвинутой настройке docker-compose
+- Зайти внутр контейнера: docker exec -it <container_name> bash
