@@ -13,7 +13,7 @@ clean: stop
 	@docker volume rm $$(docker volume ls -q);
 	docker system prune 
 
-re: 
+re: clean
 	@mkdir -p /home/${USER}/data/wp
 	@mkdir -p /home/${USER}/data/db
 	@docker-compose -f srcs/docker-compose.yml build
