@@ -64,8 +64,8 @@
 
 Создаем необходимые директории
 
-	mkdir -p /home/${USER}/data/db
-	mkdir -p /home/${USER}/data/wp
+	mkdir -p /home/${USER}/Desktop/data/db
+	mkdir -p /home/${USER}/Desktop/data/wp
 
 9. #### Настраиваем блок с [nginx](./srcs/requirements/nginx/)
 
@@ -99,6 +99,10 @@
 1.3 Настраиваем [Dockerfile](./srcs/requirements/bonus/redis/Dockerfile)
 
 - Офф [дока](https://hub.docker.com/_/redis)
+
+2. #### FTP-server
+
+
 
 ---
 

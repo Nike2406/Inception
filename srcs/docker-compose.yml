@@ -58,6 +58,20 @@ services:
       - project
     restart: always
 
+  vsftpd:
+    build: requirements/bonus/vsftpd
+    container_name: vsftpd
+    ports:
+      - "21:21"
+      - "21100-21110:21100-21110"
+    volumes:
+      - wp:/var/www/html/wordpress
+    networks:
+     - project
+    restart: always
+    env_file:
+      - ./.env 
+
 # Тома (volumes) - используются для запоминания информации даже
 # после перезапуска контейнеров
 # Содержимое сохраняется по адресу: /var/lib/docker/volumes/
