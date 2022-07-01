@@ -72,6 +72,17 @@ services:
     env_file:
       - ./.env 
 
+  adminer:
+      image: adminer:latest
+      container_name: adminer
+      restart: always
+      networks:
+        - project
+      depends_on:
+        - mariadb
+      ports: 
+        - 9080:9080
+
 # Тома (volumes) - используются для запоминания информации даже
 # после перезапуска контейнеров
 # Содержимое сохраняется по адресу: /var/lib/docker/volumes/

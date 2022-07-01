@@ -23,8 +23,8 @@ mv wp-cli.phar /usr/local/bin/wp;
 cd /var/www/html/wordpress/;
 
 # Создаем папку с сайтом
-# mkdir -p /var/www/html/wordpress/mysite;
-# cp /var/www/html/wordpress/index.html /var/www/html/wordpress/mysite/index.html;
+mkdir -p /var/www/html/wordpress/mysite;
+cp /var/www/html/wordpress/index.html /var/www/html/wordpress/mysite/index.html;
 
 wp core download --allow-root;
 mv /var/www/wp-config.php /var/www/html/wordpress/
