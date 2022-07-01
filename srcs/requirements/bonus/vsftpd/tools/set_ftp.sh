@@ -4,7 +4,7 @@ echo "VSFTPD: Trying to set up VSFTPD"
 if [ ! -f "/etc/vsftpd.conf.bak" ]; then
     
     echo "VSFTPD: Start to set"
-    mkdir -p /var/vsftpd
+    mkdir -p /var/run/vsftpd/empty
 
     cp /etc/vsftpd.conf /etc/vsftpd.conf.bak
 	mv /var/www/vsftpd.conf /etc/vsftpd.conf
